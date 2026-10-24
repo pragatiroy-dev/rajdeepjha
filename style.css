@@ -1911,6 +1911,282 @@ button {
 }
 
 
+
+/* ==================================
+   EXPERIENCE SECTION
+================================== */
+
+.experience-section .experience-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Experience card */
+.experience-section .experience-card {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.09),
+    rgba(21, 30, 48, 0.8)
+  );
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+  animation: experienceCardIn 0.65s ease both;
+}
+
+/* Staggered animation */
+.experience-section .experience-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.experience-section .experience-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.experience-section .experience-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.experience-section .experience-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.experience-section .experience-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.experience-section .experience-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Company logo */
+.company-logo {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  border-radius: 16px;
+  background: rgba(5, 12, 30, 0.65);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.company-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Experience details */
+.experience-details {
+  min-width: 0;
+}
+
+.experience-details .experience-type {
+  margin: 0 0 9px;
+  color: #C4B5FD;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.experience-details h3 {
+  margin: 0 0 9px;
+  color: #F3F4F6;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  transition: color 0.3s ease;
+}
+
+.experience-details > p:last-child {
+  margin: 0;
+  color: #B7C0D0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* Arrow */
+.experience-section .experience-arrow {
+  align-self: start;
+  color: #A78BFA;
+  font-size: 1.5rem;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover animation */
+.experience-section .experience-card:hover {
+  transform: translateY(-6px);
+  border-color: #A78BFA;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.15),
+    rgba(21, 30, 48, 0.95)
+  );
+  box-shadow: 0 14px 32px rgba(139, 92, 246, 0.16);
+}
+
+.experience-section .experience-card:hover .company-logo {
+  border-color: #A78BFA;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.18);
+  transform: scale(1.03);
+}
+
+.experience-section .experience-card:hover h3 {
+  color: #C4B5FD;
+}
+
+.experience-section .experience-card:hover .experience-arrow {
+  transform: translate(4px, -4px);
+  color: #C4B5FD;
+}
+
+/* Entrance animation */
+@keyframes experienceCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .experience-section .experience-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .experience-section .experience-card {
+    grid-template-columns: 66px minmax(0, 1fr) 16px;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .company-logo {
+    width: 66px;
+    height: 66px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .experience-details .experience-type {
+    font-size: 0.63rem;
+    letter-spacing: 0.4px;
+  }
+
+  .experience-details h3 {
+    font-size: 1rem;
+  }
+
+  .experience-details > p:last-child {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .experience-section .experience-arrow {
+    font-size: 1.15rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .experience-section .experience-card {
+    animation: none;
+    transition: none;
+  }
+
+  .company-logo,
+  .experience-details h3,
+  .experience-section .experience-arrow {
+    transition: none;
+  }
+}
+
+
+/* Download Resume Button */
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border: 1px solid #A78BFA;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.btn-resume:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, #A78BFA, #7C3AED);
+}
+
+.btn-resume:focus-visible {
+  outline: 2px solid #C4B5FD;
+  outline-offset: 4px;
+}
+
+/* Contact buttons responsive layout */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-buttons .btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+
 /* 17. Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
