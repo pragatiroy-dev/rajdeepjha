@@ -2134,6 +2134,58 @@ button {
 }
 
 
+/* Download Resume Button */
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border: 1px solid #A78BFA;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.btn-resume:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, #A78BFA, #7C3AED);
+}
+
+.btn-resume:focus-visible {
+  outline: 2px solid #C4B5FD;
+  outline-offset: 4px;
+}
+
+/* Contact buttons responsive layout */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-buttons .btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
 
 /* 17. Accessibility */
 @media (prefers-reduced-motion: reduce) {
